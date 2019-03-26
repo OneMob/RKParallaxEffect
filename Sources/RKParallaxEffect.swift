@@ -14,7 +14,7 @@ open class RKParallaxEffect: NSObject {
     var tableHeaderView: UIView?
     var tableViewTopInset: CGFloat = 0
     
-    open var isParallaxEffectEnabled: Bool = false {
+    @objc open var isParallaxEffectEnabled: Bool = false {
         didSet {
             if isParallaxEffectEnabled {
                 self.setupTableHeaderView()
@@ -30,7 +30,7 @@ open class RKParallaxEffect: NSObject {
     var isFullScreen = false
     var initialContentSize: CGSize!
     
-    open var isFullScreenTapGestureRecognizerEnabled: Bool = false {
+    @objc open var isFullScreenTapGestureRecognizerEnabled: Bool = false {
         didSet {
             if isFullScreenTapGestureRecognizerEnabled {
                 if !isFullScreenModeEnabled {
@@ -59,7 +59,7 @@ open class RKParallaxEffect: NSObject {
     //FullScreen Pan
     open var thresholdValue: CGFloat = 100.0
     
-    open var isFullScreenPanGestureRecognizerEnabled: Bool = false {
+    @objc open var isFullScreenPanGestureRecognizerEnabled: Bool = false {
         didSet {
             if isFullScreenPanGestureRecognizerEnabled {
                 if !isFullScreenModeEnabled {
@@ -73,7 +73,7 @@ open class RKParallaxEffect: NSObject {
         }
     }
     
-    public init(tableView:UITableView) {
+    @objc public init(tableView:UITableView) {
         self.tableView = tableView
         self.tableHeaderView = tableView.tableHeaderView
         super.init()
